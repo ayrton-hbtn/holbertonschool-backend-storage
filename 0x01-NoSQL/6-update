@@ -1,9 +1,10 @@
 // updates all documents with name = "Holberton school"
 // sets a new address attribute
 
-db.school.updateMany(
+db.school.update(
     { name: "Holberton school" },
     { 
         $set: { address: "972 Mission street" }
-    }
+    },
+    { multi: true }
 )
