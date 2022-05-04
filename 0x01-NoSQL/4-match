@@ -2,5 +2,5 @@
 // from the school collection
 
 db.school.find(
-    { name: "Holberton School" }
+    { name: "Holberton school" }
 )
