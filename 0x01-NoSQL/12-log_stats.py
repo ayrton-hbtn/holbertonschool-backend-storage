@@ -4,7 +4,6 @@ This project module contains a Python script that provides
 some stats about Nginx logs stored in MongoDB.
 """
 
-import pymongo
 from pymongo import MongoClient
 
 
@@ -16,7 +15,7 @@ def stats_logs() -> None:
         Stats about Nginx logs.
     """
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    myclient = MongoClient("mongodb://localhost:27017/")
     my_database = myclient["logs"]
     nginx = my_database["nginx"]
     print("{} logs".format(nginx.count_documents({})))
